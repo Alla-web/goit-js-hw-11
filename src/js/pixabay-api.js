@@ -14,7 +14,6 @@ function getImagesByQuery(query) {
       per_page: 12,
     },
   }).then(({ data }) => {
-    console.log(data.hits);
     return data;
   });
 }
