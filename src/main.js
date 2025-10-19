@@ -3,18 +3,16 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 import getImagesByQuery from './js/pixabay-api';
 
-import './css/reset.css';
-import './css/base.css';
-import './css/styles.css';
-
 import {
-  gallery,
-  loader,
   createGallery,
   clearGallery,
   showLoader,
   hideLoader,
+  showSpinner,
+  hideSpinner,
 } from './js/render-functions';
+
+import './css/spinner.css';
 
 const form = document.querySelector('.form');
 
@@ -25,6 +23,8 @@ form.addEventListener('submit', event => {
   const query = event.target.elements['serch-text'].value.trim();
 
   showLoader();
+  showSpinner();
+
   getImagesByQuery(query)
     .then(data => {
       if (!data.hits.length) {
@@ -47,5 +47,6 @@ form.addEventListener('submit', event => {
     .finally(() => {
       event.target.elements['serch-text'].value = '';
       hideLoader();
+      hideSpinner();
     });
 });

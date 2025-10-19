@@ -11,7 +11,7 @@ function getImagesByQuery(query) {
       image_type: 'photo',
       orientation: 'horizontal',
       safesearch: true,
-      per_page: 9,
+      per_page: 12,
     },
   }).then(({ data }) => {
     console.log(data.hits);

@@ -13,6 +13,8 @@ export const lightbox = new SimpleLightbox(`.gallery a`, {
 
 export const gallery = document.querySelector('.gallery');
 export const loader = document.querySelector('.loading');
+export const spinner = document.querySelector('.spinner');
+export const spinnerBtn = document.querySelector('#searchBtn');
 
 export function createGallery(images = []) {
   gallery.innerHTML = images
@@ -28,7 +30,12 @@ export function createGallery(images = []) {
       }) => `
         <li class="gallery-item">
             <a class="gallery-link" href="${largeImageURL}">
-                <img  class="gallery-image" src="${previewURL}" alt="${tags}" loading="lazy" title="Likes: ${likes.toLocaleString()}  |  View: ${views.toLocaleString()}  |  Comments: ${comments.toLocaleString()}  |  Downloads: ${downloads.toLocaleString()}"/>
+                <img  class="gallery-image" src="${previewURL}" alt="${tags}" loading="lazy" 
+                title="Title: ${tags.split(',')[0].trim()}  |  
+                Likes: ${likes.toLocaleString()}  |  
+                View: ${views.toLocaleString()}  |  
+                Comments: ${comments.toLocaleString()}  |  
+                Downloads: ${downloads.toLocaleString()}"/>
             </a>
             <ul class="info-container">
                 <li class="info-box">
@@ -61,10 +68,19 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  console.log(loader);
   loader.hidden = false;
 }
 
 export function hideLoader() {
   loader.hidden = true;
+}
+
+export function showSpinner() {
+  spinner.hidden = false;
+  spinnerBtn.hidden = false;
+}
+
+export function hideSpinner() {
+  spinner.hidden = true;
+  spinnerBtn.hidden = true;
 }
