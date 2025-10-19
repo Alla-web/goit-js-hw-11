@@ -1,5 +1,8 @@
 import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 import getImagesByQuery from './js/pixabay-api';
+
 import './css/reset.css';
 import './css/base.css';
 import './css/styles.css';
@@ -38,6 +41,7 @@ form.addEventListener('submit', event => {
         timeout: 3000,
         backgroundColor: '#EF4040',
         messageColor: 'white',
+        close: false,
       });
     })
     .finally(() => {
