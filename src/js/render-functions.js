@@ -12,8 +12,8 @@ export const lightbox = new SimpleLightbox(`.gallery a`, {
 });
 
 export const gallery = document.querySelector('.gallery');
-export const loader = document.querySelector('.loader');
-export const spinner = document.querySelector('.spinner');
+export const loader = document.querySelector('.loading');
+export const spinner = document.querySelector('.loader');
 export const spinnerBtn = document.querySelector('#searchBtn');
 
 export function createGallery(images = []) {

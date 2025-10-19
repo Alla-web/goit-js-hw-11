@@ -58,7 +58,7 @@ form button {
   letter-spacing: 0.04em;
 }
 
-.loader {
+.loading {
   margin-top: 32px;
   text-align: center;
   font-weight: 400;

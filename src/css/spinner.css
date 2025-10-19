@@ -13,7 +13,7 @@
   display: none;
 }
 
-.spinner {
+.loader {
   display: inline-block; /* ВАЖЛИВО: щоб працювали width/height */
   width: var(--sp-size);
   height: var(--sp-size);
@@ -24,7 +24,7 @@
   animation: spin 0.8s linear infinite;
 }
 
-.spinner[hidden] {
+.loader[hidden] {
   display: none;
 }
 
